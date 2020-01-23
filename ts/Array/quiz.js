@@ -1,6 +1,4 @@
-var arr = Array.of("a1,a2,a3,a5");
-var rr = this.mockSplit(",", arr);
-console.log(rr);
+var arr = Array.from("a1,a2,a3");
 function mockSplit(keyword, arr) {
     var result = arr
         .map(function (v) {
@@ -20,14 +18,16 @@ function mockSplit(keyword, arr) {
     }, "");
     return result;
 }
+var rr = mockSplit(",", arr);
+console.log(rr);
 // with checkbox
-var sss = checkboxToChoice();
-function checkboxToChoice() {
-    return [true, true, false, false]
-        .map(function (v, i) { return ({
-        name: "A" + (i + 1),
-        check: v
-    }); })
-        .filter(function (w) { return w.check; })
-        .map(function (y) { return y.name; });
-}
+// const sss = checkboxToChoice();
+// function checkboxToChoice() {
+//   return [true, true, false, false]
+//     .map((v, i) => ({
+//       name: `A${i + 1}`,
+//       check: v
+//     }))
+//     .filter(w => w.check)
+//     .map(y => y.name);
+// }
